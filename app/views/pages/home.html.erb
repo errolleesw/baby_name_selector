@@ -1,0 +1,8 @@
+<h1>Welcome to the Baby Name Selector App</h1>
+<p>Picking that "just right" name for your baby is an important decision. If the idea of wading through a sea of 100,000 names sounds overwhelming to you, you're in luck, because there is another method. This app helps you generate lists of anmes you and your partner love and then narrowing down the lists based on how well the names might work for your baby. Its a fun, easy way to come up with a name that has special meaing but is practical as well. </p>
+<p>Let's get started.</p>
+<% if user_signed_in? %>
+  <p>Welcome, <%= current_user.email %>! You are already logged in.</p>
+<% else %>
+  <p>Please <%= link_to "sign in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %>.</p>
+<% end %>

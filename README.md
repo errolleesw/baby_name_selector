@@ -43,5 +43,6 @@ rails generate devise User
 ```
 3. Run database migration to create the users table.
 
+### Setting up the models
 
 
