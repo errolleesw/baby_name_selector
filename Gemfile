@@ -66,3 +66,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Devise is a flexible authentication solution for Rails based on Warden [https://github.com/heartcombo/devise]
+gem "devise"
