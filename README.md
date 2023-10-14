@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 ## Deployment commands
 ### Create project
 ```rb
@@ -43,6 +20,30 @@ rails generate devise User
 ```
 3. Run database migration to create the users table.
 
-### Setting up the models
+### Step 1: Create a new baby profile
+#### Generatve `babyprofile` model and controller
+```bash
+rails generate scaffold BabyProfile gender:string mothers_name:string fathers_name:string expected_date:date description:text
+```
+#### Set up the associations:
 
+Open `app/models/baby_profile.rb` and define the associations:
 
+```ruby
+class BabyProfile < ApplicationRecord
+  has_many :baby_name_options, dependent: :destroy
+end
+```
+
+### Step 2: Create name options
+#### Gerate a `BabyNameOption` scaffold
+```bash
+rails generate scaffold BabyNameOption name:string baby_profile:references
+```
+
+### Stem 3: Rate baby name
+#### Generate `NameRating` scaffold
+```bash
+rails generate scaffold NameRating baby_name_option:references factor:string rating:string
+
+```

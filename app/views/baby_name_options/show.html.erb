@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @baby_name_option %>
+
+<div>
+  <%= link_to "Edit this baby name option", edit_baby_name_option_path(@baby_name_option) %> |
+  <%= link_to "Back to baby name options", baby_name_options_path %>
+
+  <%= button_to "Destroy this baby name option", @baby_name_option, method: :delete %>
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gender: MyString
+  mothers_name: MyString
+  fathers_name: MyString
+  expected_date: 2023-10-14
+  description: MyText
+
+two:
+  gender: MyString
+  mothers_name: MyString
+  fathers_name: MyString
+  expected_date: 2023-10-14
+  description: MyText

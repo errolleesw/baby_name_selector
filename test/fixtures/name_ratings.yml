@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  baby_name_option: one
+  factor: MyString
+  rating: MyString
+
+two:
+  baby_name_option: two
+  factor: MyString
+  rating: MyString

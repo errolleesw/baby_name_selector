@@ -1,0 +1,27 @@
+<%= form_with(model: baby_name_option) do |form| %>
+  <% if baby_name_option.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(baby_name_option.errors.count, "error") %> prohibited this baby_name_option from being saved:</h2>
+
+      <ul>
+        <% baby_name_option.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :baby_profile_id, style: "display: block" %>
+    <%= form.text_field :baby_profile_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

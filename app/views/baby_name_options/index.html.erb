@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Baby name options</h1>
+
+<div id="baby_name_options">
+  <% @baby_name_options.each do |baby_name_option| %>
+    <%= render baby_name_option %>
+    <p>
+      <%= link_to "Show this baby name option", baby_name_option %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New baby name option", new_baby_name_option_path %>

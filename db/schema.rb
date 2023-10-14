@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_14_115212) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_14_132145) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baby_name_options", force: :cascade do |t|
+    t.string "name"
+    t.bigint "baby_profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["baby_profile_id"], name: "index_baby_name_options_on_baby_profile_id"
+  end
+
+  create_table "baby_profiles", force: :cascade do |t|
+    t.string "gender"
+    t.string "mothers_name"
+    t.string "fathers_name"
+    t.date "expected_date"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "name_ratings", force: :cascade do |t|
+    t.bigint "baby_name_option_id", null: false
+    t.string "factor"
+    t.string "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["baby_name_option_id"], name: "index_name_ratings_on_baby_name_option_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +53,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_14_115212) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "baby_name_options", "baby_profiles"
+  add_foreign_key "name_ratings", "baby_name_options"
 end

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @baby_profile %>
+
+<div>
+  <%= link_to "Edit this baby profile", edit_baby_profile_path(@baby_profile) %> |
+  <%= link_to "Back to baby profiles", baby_profiles_path %>
+
+  <%= button_to "Destroy this baby profile", @baby_profile, method: :delete %>
+</div>

@@ -1,0 +1,2 @@
+module BabyProfilesHelper
+end
