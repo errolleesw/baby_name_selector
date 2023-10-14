@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+```rb
+rails new baby_name_selector --database=postgresql
+```
